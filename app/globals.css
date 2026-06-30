@@ -1,0 +1,265 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* To Dog Education — logo cream + navy + terracotta */
+  --background: oklch(0.955 0.028 85); /* #FDF2E2 warm cream */
+  --foreground: oklch(0.25 0.01 60); /* #2D2D2D charcoal */
+
+  --card: oklch(0.90 0.045 76); /* sandy tan tint #D9B99B family */
+  --card-foreground: oklch(0.25 0.02 60);
+
+  --popover: oklch(0.928 0.038 78.5);
+  --popover-foreground: oklch(0.25 0.02 60);
+
+  --primary: oklch(0.28 0.05 258); /* #1A2B44 navy cap */
+  --primary-foreground: oklch(1 0 0); /* white */
+
+  --secondary: oklch(0.90 0.045 76);
+  --secondary-foreground: oklch(0.25 0.02 60);
+
+  --muted: oklch(0.90 0.04 76);
+  --muted-foreground: oklch(0.50 0.02 60); /* #6B645D */
+
+  --accent: oklch(0.55 0.16 35); /* #D95333 terracotta */
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.82 0.05 74); /* subtle sandy tan border */
+  --input: oklch(0.82 0.05 74);
+  --ring: oklch(0.65 0.11 62); /* #C68E4E gold tassel */
+
+  --chart-1: oklch(0.28 0.05 258);
+  --chart-2: oklch(0.58 0.13 55);
+  --chart-3: oklch(0.65 0.11 62);
+  --chart-4: oklch(0.78 0.06 72);
+  --chart-5: oklch(0.928 0.038 78.5);
+
+  --radius: 0.75rem;
+
+  --sidebar: oklch(0.90 0.045 76);
+  --sidebar-foreground: oklch(0.25 0.02 60);
+  --sidebar-primary: oklch(0.28 0.05 258);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.55 0.16 35);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.82 0.05 74);
+  --sidebar-ring: oklch(0.65 0.11 62);
+}
+
+.dark {
+  --background: oklch(0.20 0.035 258); /* deep navy */
+  --foreground: oklch(0.93 0.035 78); /* warm cream text */
+  --card: oklch(0.24 0.04 258);
+  --card-foreground: oklch(0.93 0.035 78);
+  --popover: oklch(0.24 0.04 258);
+  --popover-foreground: oklch(0.93 0.035 78);
+  --primary: oklch(0.55 0.055 258); /* lighter navy for dark surfaces */
+  --primary-foreground: oklch(0.98 0.01 85);
+  --secondary: oklch(0.28 0.04 258);
+  --secondary-foreground: oklch(0.93 0.035 78);
+  --muted: oklch(0.28 0.04 258);
+  --muted-foreground: oklch(0.72 0.03 78);
+  --accent: oklch(0.58 0.16 35); /* terracotta CTAs */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.34 0.04 258);
+  --input: oklch(0.34 0.04 258);
+  --ring: oklch(0.65 0.11 62);
+  --sidebar: oklch(0.22 0.035 258);
+  --sidebar-foreground: oklch(0.93 0.035 78);
+  --sidebar-primary: oklch(0.55 0.055 258);
+  --sidebar-primary-foreground: oklch(0.98 0.01 85);
+  --sidebar-accent: oklch(0.58 0.16 35);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.34 0.04 258);
+  --sidebar-ring: oklch(0.65 0.11 62);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  --font-heading: var(--font-nunito), 'Nunito', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  a {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    transition-property: color, background-color, border-color, outline-color,
+      text-decoration-color, fill, stroke;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
+  a:not([data-slot="button"]):hover {
+    color: var(--primary);
+  }
+  button {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .brand-surface {
+    @apply rounded-xl border border-primary/10 bg-primary/5;
+  }
+  .brand-highlight {
+    @apply border-l-4 border-accent pl-4;
+  }
+  .brand-section-gradient {
+    @apply bg-gradient-to-br from-primary/[0.08] via-background to-accent/[0.08];
+  }
+  .brand-card-hover {
+    @apply transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md;
+  }
+  .surface-cream {
+    @apply rounded-xl border border-border/70 bg-background;
+  }
+  /* Names kept for compatibility — colors follow navy / ginger tokens */
+  .surface-sage {
+    @apply rounded-xl border border-primary/15 bg-primary/[0.06];
+  }
+  .surface-terracotta {
+    @apply rounded-xl border border-accent/15 bg-accent/[0.06];
+  }
+  .animate-marquee {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes scroll-ribbon {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-vertical,
+  [class*='scroll-ribbon'] {
+    animation: none !important;
+  }
+}
+
+/* Custom animation for 404 page dog */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Paw cursor — light mode: black, dark mode: white */
+[data-slot="button"]:hover,
+[data-slot="button"]:focus-visible,
+[data-booking-modal] button:not(:disabled):hover,
+[data-booking-modal] button:not(:disabled):focus-visible,
+[data-booking-modal] a:hover,
+[data-booking-modal] a:focus-visible {
+  cursor:
+    url('/paw-cursor.png') 12 17,
+    pointer !important;
+}
+
+.dark [data-slot="button"]:hover,
+.dark [data-slot="button"]:focus-visible,
+.dark [data-booking-modal] button:not(:disabled):hover,
+.dark [data-booking-modal] button:not(:disabled):focus-visible,
+.dark [data-booking-modal] a:hover,
+.dark [data-booking-modal] a:focus-visible {
+  cursor:
+    url('/paw-cursor-light.png') 12 17,
+    pointer !important;
+}
+
+/* Step 3 — force no underlines (overrides Tailwind preflight webkit inherit) */
+:is(a, button, [data-slot="button"]):is(:link, :visited, :hover, :focus, :focus-visible, :active) {
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
